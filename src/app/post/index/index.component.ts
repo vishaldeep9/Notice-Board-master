@@ -16,7 +16,12 @@ export class IndexComponent implements OnInit {
   Created constructor
   --------------------------------------------
   --------------------------------------------*/
-  constructor(public postService: PostService) { }
+  constructor(public postService: PostService) { 
+    const value="hello world bro";
+    const words = value.split(/[\s_]+/);
+    console.log(words)
+    console.log(words[0])
+  }
     
   /**
    * Write code on Method

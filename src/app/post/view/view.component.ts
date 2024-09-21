@@ -31,7 +31,7 @@ export class ViewComponent implements OnInit {
    */
   ngOnInit(): void {
     this.id = this.route.snapshot.params['postId'];
-        
+        console.log(this.id);
     this.postService.find(this.id).subscribe((data: Post)=>{
     });
   }

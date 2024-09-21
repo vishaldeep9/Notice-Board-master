@@ -8,14 +8,16 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
   
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CamelcasePipe } from '../service/pipe/camelcase.pipe';
   
 @NgModule({
-  declarations: [IndexComponent, ViewComponent, CreateComponent, EditComponent],
+  declarations: [IndexComponent, ViewComponent, CreateComponent, EditComponent, CamelcasePipe],
   imports: [
     CommonModule,
     PostRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   exports:[
     IndexComponent

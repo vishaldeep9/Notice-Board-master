@@ -15,12 +15,14 @@
         <tbody>
               <tr *ngFor="let post of posts">
                 <td>{{ post.id }}</td>
-                <td>{{ post.title | uppercase }}</td>
+                <td>{{ post.title | uppercase}}</td>
                 <td>{{ post.body }}</td>
                 <td>
-                  <a href="#" [routerLink]="['/post/', post.id, 'view']" style="margin-right:5px" class="btn btn-info">VieW</a>
-                  <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary" style="margin-right:5px">EdIt</a>
-                  <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">DELETE</button>
+                  <a href="#" [routerLink]="['/post/', post.id, 'view']" style="margin-right:5px" class="btn btn-info" >{{'VieW' | camelcase }}</a>
+
+                  <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary" style="margin-right:5px">{{'EdIt' |camelcase }} </a>
+                  
+                  <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">{{'DELETE'|camelcase}}</button>
                 </td>
               </tr>
         </tbody>

@@ -3,34 +3,33 @@ Bugs:
 
 1) If we user localhost:4200 showing blank page.
    Fix the issue to open posts main page.
-
    => write the code in app-routing.module.ts
 
-2) In all the buttons text should be in the camel case. 
+2) In all the buttons, text should be in the camel case.
    => Do not edit the text, go for the best approach
 
 3) Unable to view the post data in details page.
 
 4) Back button is not working in the view post page.
 
-5) Create post form error mesasges are not displaying
+5) Create post form error messages are not displaying
     1) Title is mandatory
     2) Body is mandatory
 
 6) Submit button is not disabling while form is invalid in 
    both create and edit forms.
 
-7) Post is getting delteted without asking any confirmation with user.
+7) Post is getting deleted without asking any confirmation with user.
 
 Improvements:
 =============
 8) We need to prepopulate the data in the form to edit it.
-   The approch used is not upto the mark. 
+   The approach used is not up to the mark. 
 
 9) Show all the titles in the uppercase.
 
 10) Data is getting loss when user unexpectedly clicks back button in the 
-   create and edit forms. We should take the configmtaion with user before leaving from the form.
+   create and edit forms. We should take the confirmation with user before leaving from the form.
 
 11) "Notice board" should be in the navbar and when we scroll the page it should stick on top.
 
@@ -48,5 +47,5 @@ Improvements:
     -> currently in table and details pages.
 
 15) When ever we move the mouse in the table
-    that row should be highlited same as in gmail.
+    that row should be highlighted same as in gmail.
     
