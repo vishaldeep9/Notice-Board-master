@@ -1,18 +1,24 @@
+import { Post } from './../post';
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Post } from '../post';
-    
+
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
-  styleUrls: ['./view.component.css']
+  styleUrls: ['./view.component.css'],
 })
 export class ViewComponent implements OnInit {
-     
-  id!: number;
-  post!: Post;
-    
+  public id = 1;
+  public title = '';
+  public body = '';
+
+  userData: Post = {
+    id: this.id,
+    title: this.title,
+    body: this.body,
+  };
+
   /*------------------------------------------
   --------------------------------------------
   Created constructor
@@ -22,8 +28,8 @@ export class ViewComponent implements OnInit {
     public postService: PostService,
     private route: ActivatedRoute,
     private router: Router
-   ) { }
-    
+  ) {}
+
   /**
    * Write code on Method
    *
@@ -31,9 +37,9 @@ export class ViewComponent implements OnInit {
    */
   ngOnInit(): void {
     this.id = this.route.snapshot.params['postId'];
-        console.log(this.id);
-    this.postService.find(this.id).subscribe((data: Post)=>{
+    console.log(this.id);
+    this.postService.find(this.id).subscribe((data: Post) => {
+      this.userData = data;
     });
   }
-    
 }
