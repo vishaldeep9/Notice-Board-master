@@ -16,7 +16,7 @@ Bugs:
     1) Title is mandatory
     2) Body is mandatory
 
-6) Submit button is not disabling while form is invalid in 
+6) Submit button is not disabling while form is invalid in
    both create and edit forms.
 
 7) Post is getting deleted without asking any confirmation with user.

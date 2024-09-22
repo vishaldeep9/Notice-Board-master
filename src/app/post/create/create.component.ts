@@ -49,6 +49,7 @@ export class CreateComponent implements OnInit {
    * @return response()
    */
   submit(){
+    console.log(this.form)
     console.log(this.form.value);
     this.postService.create(this.form.value).subscribe((res:any) => {
          console.log('Post created successfully!');
