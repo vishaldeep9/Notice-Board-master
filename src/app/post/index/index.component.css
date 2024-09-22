@@ -1,12 +1,16 @@
 #notice-board {
   position: fixed;
-  margin-bottom: 50px;
-  left: 50%;
+  top: 0;
   border-radius: 10px;
   box-shadow: 0 0 10px #ddd;
   padding: 5px;
   background-color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content:space-evenly;
+  font-size: 18px;
+  font-weight: bold;
 }
 .container {
-  padding: 40px;
+ padding-top: 75px;
 }

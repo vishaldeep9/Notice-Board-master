@@ -9,6 +9,9 @@ import { Post } from '../post';
 })
 export class IndexComponent implements OnInit {
   posts: Post[] = [];
+  public mm: number = 0;
+  public ss: number = 0;
+  public formattedString: string = 'MM:SS';
 
   /*------------------------------------------
   --------------------------------------------
@@ -32,6 +35,7 @@ export class IndexComponent implements OnInit {
       this.posts = data;
       console.log(this.posts);
     });
+    this.forTimer();
   }
 
   /**
@@ -48,5 +52,22 @@ export class IndexComponent implements OnInit {
     } else {
       console.log('Deletion canceled by user.');
     }
+  }
+
+  forTimer() {
+    setInterval(() => {
+      this.ss++;
+      if (this.ss == 60) {
+        this.mm++;
+        this.ss = 0;
+      }
+      this.formattedString = this.formatTime(this.mm, this.ss);
+    }, 1000);
+  }
+  formatTime(mm: number, ss: number): string {
+    const minute = mm < 10 ? '0' + mm : mm;
+    const second = ss < 10 ? '0' + ss : ss;
+
+    return `${minute}:${second}`;
   }
 }
