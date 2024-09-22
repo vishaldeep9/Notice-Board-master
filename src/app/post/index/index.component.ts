@@ -12,6 +12,7 @@ export class IndexComponent implements OnInit {
   public mm: number = 0;
   public ss: number = 0;
   public formattedString: string = 'MM:SS';
+  public welcomeMessage:string='';
 
   /*------------------------------------------
   --------------------------------------------
@@ -36,6 +37,7 @@ export class IndexComponent implements OnInit {
       console.log(this.posts);
     });
     this.forTimer();
+    this.wishMessage();
   }
 
   /**
@@ -69,5 +71,15 @@ export class IndexComponent implements OnInit {
     const second = ss < 10 ? '0' + ss : ss;
 
     return `${minute}:${second}`;
+  }
+  wishMessage(){
+    const currentTime=new Date().getHours();
+    if(currentTime<12){
+     this.welcomeMessage="Good Morning";
+    }else if(currentTime>=12 && currentTime<18){
+      this.welcomeMessage="Good Afternoon";
+    }else {
+      this.welcomeMessage="Good Evening"
+    }
   }
 }

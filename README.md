@@ -40,7 +40,7 @@ Improvements:
     Based on the time when user opens the website.
 
     --------------------------------------------------------------------------------------------
-    NOTICE BOARD                          Good Morning                                     02:22
+    NOTICE BOARD  Good Morning           02:22
     -------------------------------------------------------------------------------------------- 
 
 14) Where ever id displays, Id should display in the format of "ID-1".
