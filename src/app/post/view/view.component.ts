@@ -2,6 +2,7 @@ import { Post } from './../post';
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PostUtilityService } from '../post-utility.service';
 
 @Component({
   selector: 'app-view',
@@ -27,7 +28,8 @@ export class ViewComponent implements OnInit {
   constructor(
     public postService: PostService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private utilityService:PostUtilityService
   ) {}
 
   /**
@@ -41,5 +43,8 @@ export class ViewComponent implements OnInit {
     this.postService.find(this.id).subscribe((data: Post) => {
       this.userData = data;
     });
+  }
+  formatPostId(id: number): string {
+    return this.utilityService.formatPostId(id);
   }
 }

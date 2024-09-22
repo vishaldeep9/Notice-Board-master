@@ -1,3 +1,4 @@
+import { PostUtilityService } from './../post-utility.service';
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Post } from '../post';
@@ -12,14 +13,17 @@ export class IndexComponent implements OnInit {
   public mm: number = 0;
   public ss: number = 0;
   public formattedString: string = 'MM:SS';
-  public welcomeMessage:string='';
+  public welcomeMessage: string = '';
 
   /*------------------------------------------
   --------------------------------------------
   Created constructor
   --------------------------------------------
   --------------------------------------------*/
-  constructor(public postService: PostService) {
+  constructor(
+    public postService: PostService,
+    private utilityService: PostUtilityService
+  ) {
     const value = 'hello world bro';
     const words = value.split(/[\s_]+/);
     console.log(words);
@@ -72,14 +76,17 @@ export class IndexComponent implements OnInit {
 
     return `${minute}:${second}`;
   }
-  wishMessage(){
-    const currentTime=new Date().getHours();
-    if(currentTime<12){
-     this.welcomeMessage="Good Morning";
-    }else if(currentTime>=12 && currentTime<18){
-      this.welcomeMessage="Good Afternoon";
-    }else {
-      this.welcomeMessage="Good Evening"
+  wishMessage() {
+    const currentTime = new Date().getHours();
+    if (currentTime < 12) {
+      this.welcomeMessage = 'Good Morning';
+    } else if (currentTime >= 12 && currentTime < 18) {
+      this.welcomeMessage = 'Good Afternoon';
+    } else {
+      this.welcomeMessage = 'Good Evening';
     }
+  }
+  formatPostId(id: number): string {
+    return this.utilityService.formatPostId(id);
   }
 }

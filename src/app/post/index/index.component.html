@@ -17,7 +17,7 @@
         </thead>
         <tbody>
               <tr *ngFor="let post of posts">
-                <td>{{ post.id }}</td>
+                <td>{{ formatPostId(post.id)}}</td>
                 <td>{{ post.title | uppercase}}</td>
                 <td>{{ post.body }}</td>
                 <td>
