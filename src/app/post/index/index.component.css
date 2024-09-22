@@ -7,10 +7,14 @@
   background-color: #fff;
   width: 100%;
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   font-size: 18px;
   font-weight: bold;
 }
 .container {
- padding-top: 75px;
+  padding-top: 75px;
+}
+tbody tr:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px gray;
 }
