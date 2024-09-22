@@ -1,50 +1,52 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Post } from '../post';
-      
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.css'],
 })
 export class IndexComponent implements OnInit {
-      
   posts: Post[] = [];
-    
+
   /*------------------------------------------
   --------------------------------------------
   Created constructor
   --------------------------------------------
   --------------------------------------------*/
-  constructor(public postService: PostService) { 
-    const value="hello world bro";
+  constructor(public postService: PostService) {
+    const value = 'hello world bro';
     const words = value.split(/[\s_]+/);
-    console.log(words)
-    console.log(words[0])
+    console.log(words);
+    console.log(words[0]);
   }
-    
+
   /**
    * Write code on Method
    *
    * @return response()
    */
   ngOnInit(): void {
-    this.postService.getAll().subscribe((data: Post[])=>{
+    this.postService.getAll().subscribe((data: Post[]) => {
       this.posts = data;
       console.log(this.posts);
-    })  
+    });
   }
-    
+
   /**
    * Write code on Method
    *
    * @return response()
    */
-  deletePost(id:number){
-    this.postService.delete(id).subscribe(res => {
-         this.posts = this.posts.filter(item => item.id !== id);
-         console.log('Post deleted successfully!');
-    })
+  deletePost(id: number) {
+    if (confirm('Are you sure you want to delete this post?')) {
+      this.postService.delete(id).subscribe((res) => {
+        this.posts = this.posts.filter((item) => item.id !== id);
+        console.log('Post deleted successfully!');
+      });
+    } else {
+      console.log('Deletion canceled by user.');
+    }
   }
-    
 }

@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './post/create/create.component';
 
 const routes: Routes = [
-  {path:'create',component:CreateComponent},
+  { path: '', redirectTo: 'post/index', pathMatch: 'full'},
   { path: 'post', redirectTo: 'post/index', pathMatch: 'full'},
    {
     path:'post',

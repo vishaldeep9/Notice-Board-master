@@ -19,7 +19,7 @@ Bugs:
 6) Submit button is not disabling while form is invalid in
    both create and edit forms.
 
-7) Post is getting deleted without asking any confirmation with user.
+7) Post is getting deleted without asking any confirmation with user
 
 Improvements:
 =============
