@@ -1,0 +1,12 @@
+#notice-board {
+  position: fixed;
+  margin-bottom: 50px;
+  left: 50%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+  padding: 5px;
+  background-color: #fff;
+}
+.container {
+  padding: 40px;
+}
